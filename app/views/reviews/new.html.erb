@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>Add a review for <%= @restaurant.name %></h1>
+  <%= render 'reviews/form' %>
+  <hr>
+  <%= link_to "👈 Go back to #{@restaurant.name}", restaurant_path(@restaurant) %>
+</div>
