@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @restaurant.name %></h1> | <span class="index-category"><%= @restaurant.category.capitalize %></span>
+  <p>🗺️ <%= @restaurant.address %></p>
+  <p>📱 Call <%= @restaurant.name %> at <%= @restaurant.phone_number %></p>
+  <hr>
+  <h2>What people say about <%= @restaurant.name %>?</h2>
+  <div class="reviews">
+    <% if @restaurant.reviews.empty? %>
+      <p>No reviews to display yet! 🤷‍♀️</p>
+    <% else %>
+      <% @restaurant.reviews.each do |review| %>
+        <div class="quotes">"<%= review.content.capitalize %>"</div>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to 'Add a review ✍️', new_restaurant_review_path(@restaurant) %></p>
+  <hr>
+  <%= link_to '👈 Go back to all restaurants', restaurants_path %>
+</div>

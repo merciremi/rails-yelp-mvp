@@ -1,0 +1,9 @@
+<div class="container">
+  <% @restaurants.each do |restaurant|  %>
+  <h1><%= link_to restaurant.name, restaurant_path(restaurant) %></h1> | <span class="index-category"><%= restaurant.category.capitalize %></span>
+  <p>🗺️ <%= restaurant.address %></p>
+  <p>📱 Call <%= restaurant.name %> at <%= restaurant.phone_number %></p>
+  <p>👀 <%= link_to 'Read reviews', restaurant_path(restaurant) %></p>
+  <% end %>
+
+</div>
